@@ -63,3 +63,4 @@ prequel.tv, 513, RESELLER
 pubmatic.com, 160989, RESELLER, 5d62403b186f2ace
 indexexchange.com, 192829, RESELLER, 50b1c356f2c5c8fc
 conversantmedia.com, 100097, RESELLER, 03113cd04947736d
+yahoo.com, 59875, RESELLER
