@@ -1,222 +1,518 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DayMoon600 Games</title>
+
+  <!-- SEO -->
+  <title>DayMoon600 Games | Fun Mobile Games Studio</title>
+
+  <meta name="description"
+    content="DayMoon600 Games creates fun and addictive mobile games including arcade, puzzle, bubble shooter, and word games for players worldwide." />
+
+  <meta name="keywords"
+    content="mobile games, puzzle games, arcade games, bubble shooter, word games, indie game studio" />
+
+  <meta name="author" content="DayMoon600 Games" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="DayMoon600 Games" />
+  <meta property="og:description"
+    content="Fun & addictive mobile games including arcade, puzzle, bubble shooter, and word games." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon"
+    href="https://cdn-icons-png.flaticon.com/512/686/686589.png" />
 
   <style>
+
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
     }
 
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:'Poppins',sans-serif;
       background:#0f172a;
       color:white;
-      line-height:1.6;
+      line-height:1.7;
+      overflow-x:hidden;
     }
 
-    header{
-      padding:60px 20px;
-      text-align:center;
-      background:linear-gradient(135deg,#2563eb,#7c3aed);
+    a{
+      text-decoration:none;
     }
 
-    header h1{
-      font-size:42px;
-      margin-bottom:10px;
-    }
+    /* NAVBAR */
 
-    header p{
-      font-size:18px;
-      opacity:0.9;
-    }
-
-    .container{
+    nav{
+      position:fixed;
+      top:0;
+      left:0;
       width:100%;
-      max-width:1100px;
-      margin:auto;
-      padding:30px 15px;
+      z-index:1000;
+
+      background:rgba(15,23,42,0.85);
+      backdrop-filter:blur(14px);
+
+      border-bottom:1px solid rgba(255,255,255,0.08);
     }
 
-    .game-card{
-      background:#1e293b;
-      border-radius:20px;
-      padding:25px;
-      margin-bottom:25px;
-      box-shadow:0 8px 20px rgba(0,0,0,0.25);
+    .nav-container{
+      max-width:1200px;
+      margin:auto;
+
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+
+      padding:16px 20px;
+    }
+
+    .logo{
+      font-size:24px;
+      font-weight:700;
+      color:#fff;
+      letter-spacing:1px;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:28px;
+    }
+
+    .nav-links a{
+      color:#e2e8f0;
+      font-weight:500;
+      transition:0.3s;
+      position:relative;
+    }
+
+    .nav-links a::after{
+      content:'';
+      position:absolute;
+      left:0;
+      bottom:-6px;
+
+      width:0%;
+      height:2px;
+
+      background:#60a5fa;
       transition:0.3s;
     }
 
-    .game-card:hover{
-      transform:translateY(-5px);
-    }
-
-    .game-title{
-      font-size:28px;
-      margin-bottom:15px;
+    .nav-links a:hover{
       color:#60a5fa;
     }
 
-    .game-desc{
-      font-size:16px;
-      color:#e2e8f0;
+    .nav-links a:hover::after{
+      width:100%;
     }
 
-    .contact{
-      background:#111827;
-      padding:40px 20px;
+    /* HEADER */
+
+    header{
+      min-height:90vh;
+
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+
       text-align:center;
-      margin-top:40px;
+      padding:120px 20px 80px;
+
+      background:
+        radial-gradient(circle at top left,#3b82f6 0%,transparent 40%),
+        radial-gradient(circle at bottom right,#7c3aed 0%,transparent 40%),
+        linear-gradient(135deg,#111827,#0f172a);
+    }
+
+    header h1{
+      font-size:60px;
+      margin-bottom:20px;
+      line-height:1.2;
+    }
+
+    header p{
+      font-size:20px;
+      max-width:700px;
+      color:#cbd5e1;
+    }
+
+    .container{
+      max-width:1200px;
+      margin:auto;
+      padding:60px 20px;
+    }
+
+    section{
+      margin-bottom:50px;
+    }
+
+    /* ABOUT */
+
+    .about{
+      background:#111827;
+      border:1px solid rgba(255,255,255,0.06);
+
+      padding:40px;
+      border-radius:24px;
+
+      box-shadow:0 10px 25px rgba(0,0,0,0.25);
+    }
+
+    .about h2{
+      font-size:34px;
+      margin-bottom:18px;
+      color:#60a5fa;
+    }
+
+    .about p{
+      color:#d1d5db;
+      font-size:17px;
+    }
+
+    /* GAME GRID */
+
+    .games-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:24px;
+    }
+
+    /* GAME CARD */
+
+    .game-card{
+
+      background:#1e293b;
+
+      border-radius:24px;
+      padding:28px;
+
+      border:1px solid rgba(255,255,255,0.06);
+
+      box-shadow:0 10px 30px rgba(0,0,0,0.25);
+
+      transition:0.35s ease;
+
+      opacity:0;
+      transform:translateY(40px);
+    }
+
+    .game-card.show{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    .game-card:hover{
+      transform:translateY(-10px);
+      border-color:rgba(96,165,250,0.35);
+    }
+
+    .game-title{
+      font-size:26px;
+      margin-bottom:16px;
+      color:#60a5fa;
+      line-height:1.3;
+    }
+
+    .game-desc{
+      color:#dbe4ee;
+      font-size:15px;
+    }
+
+    /* CONTACT */
+
+    .contact{
+      text-align:center;
+
+      background:#111827;
+      border-top:1px solid rgba(255,255,255,0.06);
+
+      padding:70px 20px;
     }
 
     .contact h2{
-      margin-bottom:15px;
-      font-size:30px;
+      font-size:34px;
+      margin-bottom:20px;
     }
 
     .contact p{
-      margin-bottom:10px;
       color:#d1d5db;
+      margin-bottom:14px;
     }
 
     .contact a{
       color:#60a5fa;
-      text-decoration:none;
-      word-break:break-word;
+      transition:0.3s;
+    }
+
+    .contact a:hover{
+      opacity:0.8;
     }
 
     footer{
       text-align:center;
-      padding:20px;
+      padding:25px;
       color:#94a3b8;
       font-size:14px;
+      background:#0b1120;
     }
+
+    /* MOBILE */
 
     @media(max-width:768px){
 
+      header{
+        min-height:75vh;
+      }
+
       header h1{
-        font-size:32px;
+        font-size:42px;
+      }
+
+      header p{
+        font-size:17px;
+      }
+
+      .nav-links{
+        gap:16px;
+      }
+
+      .nav-links a{
+        font-size:14px;
+      }
+
+      .about{
+        padding:28px;
+      }
+
+      .about h2,
+      .contact h2{
+        font-size:28px;
       }
 
       .game-title{
-        font-size:24px;
+        font-size:22px;
       }
 
-      .game-desc{
-        font-size:15px;
-      }
     }
+
   </style>
+
 </head>
 
 <body>
 
+  <!-- NAVBAR -->
+
+  <nav>
+
+    <div class="nav-container">
+
+      <div class="logo">
+        DayMoon600
+      </div>
+
+      <div class="nav-links">
+
+        <a href="#about">About</a>
+        <a href="#games">Games</a>
+        <a href="#contact">Contact</a>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+  <!-- HEADER -->
+
   <header>
+
     <h1>DayMoon600 Games</h1>
-    <p>Fun & Addictive Mobile Games</p>
+
+    <p>
+      Creating fun, addictive, and colorful mobile games
+      for players around the world.
+    </p>
+
   </header>
 
   <div class="container">
 
-    <div class="game-card">
-      <h2 class="game-title">Stack Bump: Hit Black Block</h2>
+    <!-- ABOUT -->
 
-      <p class="game-desc">
-        Stack Bump is a challenging arcade game based on reflexes and precision.
-        Your mission is simple: guide the ball to the bottom of a tower made of
-        moving platforms by smashing through the colored pieces.
-        <br><br>
-        But be careful — touching the black blocks ends the game instantly.
-        Build up combos to activate Fever Mode and smash through everything
-        without penalties.
-        <br><br>
-        With more than 100 exciting levels and increasingly difficult challenges,
-        Stack Bump delivers fast-paced and satisfying gameplay perfect for quick sessions.
+    <section class="about" id="about">
+
+      <h2>About Studio</h2>
+
+      <p>
+        DayMoon600 Games is an indie mobile game studio focused on creating
+        entertaining experiences for casual players worldwide.
+        We develop arcade, puzzle, word, and bubble shooter games
+        designed for quick fun, relaxing gameplay, and endless challenges.
       </p>
-    </div>
 
-    <div class="game-card">
-      <h2 class="game-title">Sweet Day - Jelly Match 3 Games</h2>
+    </section>
 
-      <p class="game-desc">
-        Sweet Day is a colorful match-3 puzzle adventure filled with candy,
-        jelly, and explosive fun.
-        <br><br>
-        Match three candies of the same color to clear them, create powerful
-        special jellies by matching four or five, and complete exciting puzzle levels.
-        <br><br>
-        Challenge yourself across many sweet stages while aiming to earn
-        three stars before running out of moves or time.
-      </p>
-    </div>
+    <!-- GAMES -->
 
-    <div class="game-card">
-      <h2 class="game-title">Word Fun Tap</h2>
+    <section id="games">
 
-      <p class="game-desc">
-        Word Fun Tap is an addictive word puzzle game that challenges your vocabulary skills.
-        <br><br>
-        Swipe your finger across scrambled letters to discover hidden words and solve puzzles.
-        <br><br>
-        Easy to play but difficult to master, Word Fun Tap is perfect for players
-        who love brain-training word games.
-      </p>
-    </div>
+      <div class="games-grid">
 
-    <div class="game-card">
-      <h2 class="game-title">Pug Pop Bubble Shooter</h2>
+        <div class="game-card">
 
-      <p class="game-desc">
-        Pug Pop Bubble Shooter is a fun bubble-popping adventure featuring adorable pugs.
-        <br><br>
-        Aim and shoot bubbles to match colors and clear the board while rescuing cute puppies trapped inside.
-        <br><br>
-        Enjoy relaxing gameplay, colorful levels, and endless bubble shooting fun.
-      </p>
-    </div>
+          <h2 class="game-title">
+            Stack Bump: Hit Black Block
+          </h2>
 
-    <div class="game-card">
-      <h2 class="game-title">Pug Pop Bubble Shooter 2</h2>
+          <p class="game-desc">
+            Smash through colorful platforms while avoiding dangerous black blocks.
+            Build combos, activate Fever Mode, and conquer more than 100 exciting levels.
+          </p>
 
-      <p class="game-desc">
-        The adventure continues in Pug Pop Bubble Shooter 2.
-        Rescue trapped dogs by matching and popping colorful bubbles in hundreds of fun levels.
-        <br><br>
-        Collect rewards, unlock special powers, and use powerful boosters to complete difficult stages.
-        <br><br>
-        A classic bubble shooter experience with cute pets and exciting challenges.
-      </p>
-    </div>
+        </div>
+
+        <div class="game-card">
+
+          <h2 class="game-title">
+            Sweet Day - Jelly Match 3 Games
+          </h2>
+
+          <p class="game-desc">
+            Match colorful candies and jellies to complete sweet puzzle challenges
+            packed with explosive fun and rewarding combos.
+          </p>
+
+        </div>
+
+        <div class="game-card">
+
+          <h2 class="game-title">
+            Word Fun Tap
+          </h2>
+
+          <p class="game-desc">
+            Swipe letters to discover hidden words and train your brain
+            in this addictive vocabulary puzzle adventure.
+          </p>
+
+        </div>
+
+        <div class="game-card">
+
+          <h2 class="game-title">
+            Pug Pop Bubble Shooter
+          </h2>
+
+          <p class="game-desc">
+            Rescue adorable puppies by matching and popping colorful bubbles
+            across relaxing and fun levels.
+          </p>
+
+        </div>
+
+        <div class="game-card">
+
+          <h2 class="game-title">
+            Pug Pop Bubble Shooter 2
+          </h2>
+
+          <p class="game-desc">
+            Continue the bubble shooter adventure with new boosters,
+            rewards, and hundreds of challenging stages.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
 
   </div>
 
-  <div class="contact">
+  <!-- CONTACT -->
+
+  <section class="contact" id="contact">
+
     <h2>Contact Us</h2>
 
-    <p>If you have any questions, suggestions, or privacy-related concerns:</p>
+    <p>
+      Questions, suggestions, or privacy-related concerns?
+    </p>
 
     <p>
+
       Email:
       <a href="mailto:daymoon600@gmail.com">
         daymoon600@gmail.com
       </a>
+
     </p>
 
     <p>
+
       Privacy Policy:
       <a href="https://daymoon600.github.io/PrivacyPolicy/" target="_blank">
         View Privacy Policy
       </a>
+
     </p>
-  </div>
+
+  </section>
+
+  <!-- FOOTER -->
 
   <footer>
-    © 2026 DayMoon Games. All Rights Reserved.
+    © 2026 DayMoon600 Games. All Rights Reserved.
   </footer>
 
+  <!-- SCROLL ANIMATION -->
+
+  <script>
+
+    const cards = document.querySelectorAll('.game-card');
+
+    const observer = new IntersectionObserver(entries => {
+
+      entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+
+          entry.target.classList.add('show');
+
+        }
+
+      });
+
+    }, {
+      threshold:0.15
+    });
+
+    cards.forEach(card => {
+      observer.observe(card);
+    });
+
+  </script>
+
 </body>
+
 </html>
