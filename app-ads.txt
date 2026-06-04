@@ -362,7 +362,6 @@ zmaticoo.com,5135063,RESELLER
 zmaticoo.com,5135224,RESELLER
 zmaticoo.com,5135302,RESELLER
 zoomd.com,88478941,RESELLER
-google.com, , DIRECT, f08c47fec0942fa0
 aps.amazon.com, 15369960, DIRECT
 chartboost.com, 607b7f916a0a9907d63e1579, DIRECT
 appnexus.com, 10005, RESELLER, f5ab79cb980f11d1
