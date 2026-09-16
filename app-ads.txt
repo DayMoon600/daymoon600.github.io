@@ -396,6 +396,7 @@ tradplusad.com,cc37417e7e7108a3,RESELLER
 ushareit.com,LCc6b8b1c8aca38e6f,RESELLER
 verve.com,1007302,RESELLER,0c8f5958fc2d6282
 visiblemeasures.com,1090,RESELLER
+risecodes.com,66fab6981efdb80001a3dadc,RESELLER,79929e88b2ba73bc
 
 # Chartboost
 chartboost.com, 607b7f916a0a9907d63e1579, DIRECT
